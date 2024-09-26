@@ -1,0 +1,15 @@
+services:
+
+  stub-oidc-provider:
+    image: stub-oidc-provider
+    container_name: oidc
+    restart: always
+    environment:
+        ISSUER: http://localhost:9000
+        STUB_CLIENT_ID: foo
+        STUB_CLIENT_SECRET: bar
+        DEBUG: "oidc-provider*"
+        CALLBACK_URL: http://localhost:3000/login-oidc/oidc
+        PORT: 9000
+    ports:
+      - "0.0.0.0:9000:9000"

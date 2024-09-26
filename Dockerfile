@@ -7,8 +7,8 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-EXPOSE 8080
+EXPOSE 9000
 
-ENV DEBUG oidc-provider* 
+ENV DEBUG=oidc-provider* 
 
 CMD ["node", "index.js"]
